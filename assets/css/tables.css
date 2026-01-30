@@ -1,0 +1,16 @@
+/* Status Pills */
+
+table .status {
+  padding: 3px 6px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.33333;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+table .status.published {
+  color: #2ecc71;
+  border-color: #2ecc71;
+}

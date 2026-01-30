@@ -1,0 +1,165 @@
+.wrapper.uploadImages .content{
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--white);
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.preview-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.thumbnail-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f0f0f0;
+  border: 1px solid #eee;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.progress-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dim background during upload */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.mini-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.mini-progress-bar .fill {
+  height: 100%;
+  background: #5021ff; /* Violet brand color */
+  transition: width 0.3s ease;
+}
+
+.success-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #16a34a;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.file-label {
+  font-size: 11px;
+  color: #666;
+  text-align: center;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: background 0.2s;
+}
+.remove-btn:hover { background: #ff4d4f; }
+
+
+
+.drop-zone {
+  border: 2px dashed #e0e0e0;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  transition: all 0.2s ease;
+  background: #fafafa;
+  cursor: pointer;
+}
+
+.drop-zone.dragging {
+  border-color: #5021ff;
+  background: rgba(80, 33, 255, 0.05);
+  transform: scale(1.02);
+}
+
+.upload-label {
+  cursor: pointer;
+  display: block;
+}
+
+.upload-icon {
+  font-size: 32px;
+  color: #5021ff;
+  margin-bottom: 10px;
+}
+
+
+.image-item {
+  width: 160px;
+  height: 160px;
+  padding: 10px;
+  position: relative;
+  cursor: grab;
+}
+
+
+
+.delete-btn {
+	z-index: 999;
+	color: #fff;
+	cursor: pointer;
+	background: #0009;
+	border: none;
+  pointer-events: auto; /* Ensure it captures clicks */
+
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	width: 24px;
+	height: 24px;
+	font-size: 18px;
+	transition: background .2s;
+	display: flex;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+.delete-btn:hover { background: #ff4d4f; }

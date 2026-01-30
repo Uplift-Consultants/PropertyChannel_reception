@@ -1,0 +1,14 @@
+/* All Rights Reserved @ Uplift Consultants (Pvt) Ltd */
+/************* Propertylist 2026 **************/
+@charset "UTF-8";
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.embla__button__svg {
+    height: 18px;
+    width: 18px;
+    fill: var(--primary);
+}

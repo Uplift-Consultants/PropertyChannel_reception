@@ -1,0 +1,121 @@
+/* --- Core Container --- */
+.embla {
+  position: relative;
+  overflow: visible; /* Required for buttons to hang off the side */
+  width: 100%;
+  max-width: 800px; /* Reduced slightly to ensure 800px * 0.5 fits perfectly */
+  margin: 0 auto;
+}
+
+.embla__viewport {
+  overflow: hidden;
+  cursor: grab;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.template-aspect-ratio {
+  position: relative;
+  width: 100%;
+  /* FIX: Remove flex and let the zoomed content push the height */
+  display: flex;
+  justify-content: center; 
+  overflow: hidden;
+  height: auto; /* Allow it to grow */
+  min-height: 200px; /* Prevents the box from disappearing if data is loading */
+}
+
+/* --- The Zoom Logic --- */
+.html-preview-content {
+  width: 800px;        /* The "True" design width */
+  zoom: 0.5;           /* Scaled visual + Scaled layout */
+  display: flex;
+  justify-content: center;      /* Ensure it behaves like a box */
+  pointer-events: none;
+  
+  /* Reset any potential inherited margins */
+  margin: 0;
+  padding: 0;
+  transform-origin: top left;
+}
+/* --- Mid-Template Navigation --- */
+.embla__controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none; /* Click-through to carousel slides */
+  z-index: 50;
+}
+
+.embla__button {
+  pointer-events: auto; /* Buttons remain clickable */
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: var(--primary);
+}
+
+.embla__button--prev { transform: translateX(-50%); }
+.embla__button--next { transform: translateX(50%); }
+
+.embla__button:hover:not(:disabled) {
+  background-color: #f8fafc;
+  transform: translateY(-2px) translateX(var(--hover-nudge)); /* Maintains side position */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* Logic for hover nudge directions */
+.embla__button--prev:hover { --hover-nudge: -50%; }
+.embla__button--next:hover { --hover-nudge: 50%; }
+
+.embla__button:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+}
+
+@media (min-width: 1281px) {
+  .html-preview-content {
+    width: 800px;        /* The "True" design width */
+    zoom: 0.75;           /* Scaled visual + Scaled layout */
+    display: flex;
+    justify-content: center;      /* Ensure it behaves like a box */
+    pointer-events: none;
+    
+    /* Reset any potential inherited margins */
+    margin: 0;
+    padding: 0;
+    transform-origin: top left;
+  }
+}

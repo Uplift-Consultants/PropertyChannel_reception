@@ -1,0 +1,114 @@
+/* All Rights Reserved @ Uplift Consultants (Pvt) Ltd */
+/************* Propertylist 2026 **************/
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100%; 
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #f4f4f4;
+    color: #333;
+    min-height: 100dvh;
+}
+
+body > .wrapper {
+    display: grid;
+    min-height: 100vh;
+    max-width: 100vw;
+    margin-bottom: 76px;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* text */
+.textCenter {
+    text-align: center;
+}
+.capitalize {
+    text-transform: capitalize;
+}
+
+.dFlex {
+    display: flex;
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+.grow {
+    flex-grow: 1;
+}
+
+.mlAuto {
+    margin-left: auto;
+}
+
+@layer components {
+  /* 1. Hide scrollbar but keep functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* 2. Optional: Smooth transition for Tab Panels */
+  .tab-content-animation[data-state='active'] {
+    animation: fadeIn 0.3s ease-out;
+    background-color: var(--primary);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@media (max-width: 480px) {
+    .sm-hidden {
+        display: none;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .md-hidden {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+    .md-hidden {
+        display: none;
+    }
+}
+
+@media (min-width: 1281px) {
+    body > .wrapper {
+        grid-template-columns: 76px 1fr;
+    }
+    body > .wrapper > .content {
+        grid-column: 2;
+    }
+    .md-hidden {
+        display: none;
+    }
+
+}

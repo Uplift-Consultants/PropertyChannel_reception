@@ -1,0 +1,151 @@
+#portal > .modal {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    inset: 0;
+    z-index: 1001;
+}
+
+.modal > .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    z-index: 999;
+    background-color: rgba(83,83,95,.8);
+    cursor: pointer;
+}
+.modal > .card {
+    margin: 100px auto auto auto;
+    z-index: 1000;
+}
+
+.modal > .card .wrapper{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: var(--white);
+}
+.modal > .card .wrapper .header{
+    display: flex;
+    position: relative;
+    padding: 20px;
+    font-weight: 500;
+}
+.modal > .card .wrapper .header .title {
+    font-size: 1.15rem;
+    text-align: center;
+}
+.modal > .card .wrapper .header .btn.done{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.modal > .card .wrapper .footer {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.overlay > .modal > .card .handle {
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	height: 4px;
+	margin-top: 6px;
+	width: 40px;
+	border-radius: 2px;
+	background: #00000026;
+}
+
+.overlay > .modal > .card > .content {
+    display: flex;
+    flex-direction:column;
+}
+
+.wrapper.apps > .title {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.wrapper.user, .wrapper.apps {
+        padding: 20px;
+    margin: 80px auto auto auto;
+    border-radius: 20px;
+    border: 2px solid #f1f1f1;
+    background-color: var(--white);
+}
+
+.user .userInfo {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    justify-content: center;
+}
+.user .userInfo .avatar {
+    display: flex;
+    color: #fff;
+    font-size: 2rem;
+    height: 60px;
+    width: 60px;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    background-color: var(--primary);
+}
+
+.user .userInfo .greeting {
+    padding: 10px;
+    text-align: center;
+	font-weight: 400;
+	font-size: 1.375rem;
+	line-height: 1.75rem;
+	letter-spacing: normal;
+}
+
+/* Add New Listing */
+.modal > .card > .wrapper.addnew {
+    max-width: 600px;
+}
+
+/* Delete*/
+.modal > .card > .wrapper.delete .content,.modal > .card > .wrapper.addnew .content {
+    padding: 20px;
+}
+
+/* Uploading */
+.wrapper.uploadImages {
+    max-width: 600px;
+
+}
+
+@media (max-width: 480px) {
+
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+
+}
+
+@media (min-width: 1281px) {
+
+    .overlay > .modal > .card > .handle {
+        display: none;
+    }
+    .overlay > .modal > .card.preview {
+        margin: 80px auto auto auto;
+        max-width: 640px;
+        max-height: 80vh;
+        border-radius: 20px;
+        border: 2px solid #f1f1f1;
+    }
+
+}

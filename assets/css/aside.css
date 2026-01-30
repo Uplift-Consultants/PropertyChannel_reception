@@ -1,0 +1,129 @@
+/* All Rights Reserved @ Uplift Consultants (Pvt) Ltd */
+/************* Propertylist 2026 **************/
+@charset "UTF-8";
+
+.sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    background-color: #e4e4e4;
+    transition: 0.3s;
+    z-index: 100;
+}
+
+.sidebar .navLink {
+    padding: 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+
+}
+
+.sidebar .navLink:hover .icon {
+    background-color: var(--white);
+}
+
+.sidebar .navLink .icon {
+    padding: 4px 12px;
+    border-radius: 16px;
+    transition: background-color 0.2s ease-in-out;
+
+}
+
+.sidebar .navLink.active .icon {
+    background-color: var(--primary);
+}
+
+.sidebar .navLink .icon .default {
+    fill: none;
+    stroke: #000;
+}
+.sidebar .navLink.active .icon .default{
+    fill: var(--white);
+    stroke: transparent;
+}
+
+.sidebar .navLink .icon .alt {
+    fill: #000;
+    stroke: transparent;
+}
+
+.sidebar .navLink.active .icon .alt {
+    fill: var(--white);
+    stroke: var(--white);
+}
+
+.sidebar .navLink .title {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.sidebar .navLink.active .title {
+    color: var(--primary);
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        inset: auto 0 0 0;
+    }
+    .sidebar .btn.menu {
+        display: none;
+    }
+    .sidebar .navWrapper {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .sidebar .navList {
+        display: flex;
+        overflow-x: auto; /* Enables horizontal scrolling */
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+    .sidebar .navList::-webkit-scrollbar {
+        display: none; 
+    }
+    .sidebar .navList .listItem {
+        flex: 0 0 20%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .sidebar {
+        inset: auto 0 0 0;
+    }
+    .sidebar .btn.menu {
+        display: none;
+    }
+    .sidebar .navWrapper {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .sidebar .navList {
+        display: flex;
+        overflow-x: auto; /* Enables horizontal scrolling */
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+    .sidebar .navList::-webkit-scrollbar {
+        display: none; 
+    }
+    .sidebar .navList .listItem {
+        flex: 0 0 20%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+  .sidebar {
+    left: -100%; /* Move off-screen; toggle with JS */
+    width: 250px;
+    z-index: 200;
+  }
+}
+
+@media (min-width: 1281px) {
+    .sidebar {
+        width: 76px;
+    }
+}
